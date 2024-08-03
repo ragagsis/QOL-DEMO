@@ -50,4 +50,6 @@ input[type=text] {
 button {
     background-color: #0099ff;
     font-family: cursive;
+    border-radius:5px;
+    border:solid;
 }
