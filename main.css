@@ -46,3 +46,7 @@ input[type=text] {
 .gat-chat-container {
     background-color:rgba(0,0,0,0)
 }
+button {
+    background-color: blue;
+    font-family: cursive;
+}
