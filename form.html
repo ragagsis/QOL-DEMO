@@ -1,31 +1,56 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="https://qol-demo.rgserver.in/main.css">
-        <link rel="icon" href="https://qol-demo.rgserver.in/rp.png">
         <title>QOL - Form</title>
-        <script scr="https://qol-demo.rgserver.in/main.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                
+                // Pre-fill visible fields
+                document.getElementById('First Name').value = urlParams.get('firstName') || ''; // Pre-fill First Name
+                document.getElementById('Last Name').value = urlParams.get('lastName') || ''; // Pre-fill Last Name
+                
+                // Pre-fill rating
+                const rating = urlParams.get('rating');
+                if (rating) {
+                    const radioButton = document.querySelector(`input[name="Rate Rohit Phalke"][value="${rating}"]`);
+                    if (radioButton) {
+                        radioButton.checked = true; // Pre-fill rating
+                    }
+                }
+
+                // Pre-fill hidden fields
+                document.querySelector('input[name="Class ID"]').value = urlParams.get('classId') || 'MYP 4'; // Pre-fill Class ID
+                document.querySelector('input[name="Teacher"]').value = urlParams.get('teacher') || 'RJ'; // Pre-fill Teacher
+                document.getElementById('unit').value = urlParams.get('unit') || 'U1'; // Pre-fill Unit
+            });
+        </script>
     </head>
     <body>
         <div>
             <h1>QOL - Form</h1>
-                <form class="form" autocomplete="on>
-                    <label for="FN">First name:</label><br>
-                    <input type="text" id="FN" name="FN" value="English or"><br><br>
-                    <label for="LN">Last name:</label><br>
-                    <input type="text" id="LN" name="LN" value="Spanish"><br><br>
-                    <label for="rb">hi</label><br>
-                    <label class="rbmi">1</label>
-                    <input type="radio"id="rb" name="rb" value="1">
-                    <input type="radio"id="rb" name="rb" value="2"> 
-                    <input type="radio"id="rb" name="rb" value="3"> 
-                    <input type="radio"id="rb" name="rb" value="4"> 
-                    <input type="radio"id="rb" name="rb" value="5">
-                    <label class="rbmx">5</label><br><br>
-                    <input type="submit" value="Submit" class="sb">
-                </form>
-            
-            
+            <form class="form" method="POST" action="https://script.google.com/macros/s/AKfycbztH1p8yMhB4P_3QEMrf1mhFi8_OiE_inIKWOeOK0IBXoy2WGvw94j0coqOMGyzOSkSvw/exec">
+                <label for="FN">First name:</label><br>
+                <input type="text" id="First Name" name="First Name" value="English or"><br><br>
+                <label for="LN">Last name:</label><br>
+                <input type="text" id="Last Name" name="Last Name" value="Spanish"><br><br>
+                <label for="rb">Rate Rohit Phalke</label><br>
+                <label class="rbmi">1</label>
+                <input type="radio" id="Rate Rohit Phalke" name="Rate Rohit Phalke" value="1">
+                <input type="radio" id="Rate Rohit Phalke" name="Rate Rohit Phalke" value="2"> 
+                <input type="radio" id="Rate Rohit Phalke" name="Rate Rohit Phalke" value="3"> 
+                <input type="radio" id="Rate Rohit Phalke" name="Rate Rohit Phalke" value="4"> 
+                <input type="radio" id="Rate Rohit Phalke" name="Rate Rohit Phalke" value="5">
+                <label class="rbmx">5</label><br><br>
+                
+                <!-- Hidden fields -->
+                <input type="hidden" name="Class ID" value="MYP 4">
+                <input type="hidden" name="Teacher" value="RJ">
+                <input type="hidden" name="Unit" id="unit" value="U1">
+                
+                <input type="submit" value="Submit" class="sb">
+            </form>
         </div>
-        <footer>© 2018-2024 RG Servers</footer>
+        <footer>Copyrights reserved - RG Servers</footer>
     </body>
 </html>
