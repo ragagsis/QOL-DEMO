@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://qol-demo.rgserver.in/main.css">
+        <title>Select Unit</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                document.querySelector('input[name="Teacher"]').value = urlParams.get('teacher') || 'RJ';
+                document.querySelector('input[name="Class ID"]').value = urlParams.get('classId') || 'MYP 4';
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Select Your Unit</h1>
+        <button onclick="window.location.href='../form.html?teacher=' + encodeURIComponent(document.querySelector('input[name=Teacher]').value) + '&classId=' + encodeURIComponent(document.querySelector('input[name=Class ID]').value) + '&unit=U1';">Unit 1</button>
+        <button onclick="window.location.href='../form.html?teacher=' + encodeURIComponent(document.querySelector('input[name=Teacher]').value) + '&classId=' + encodeURIComponent(document.querySelector('input[name=Class ID]').value) + '&unit=U2';">Unit 2</button>
+        <!-- Add more units as needed -->
+        
+        <input type="hidden" name="Teacher">
+        <input type="hidden" name="Class ID">
+    </body>
+    <footer>By RG Servers</footer>
+</html>
