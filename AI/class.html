@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://qol-demo.rgserver.in/main.css">
+        <title>Select Class</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                document.querySelector('input[name="Teacher"]').value = urlParams.get('teacher') || 'RJ';
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Select Your Class</h1>
+        <button onclick="window.location.href='unit.html?teacher=' + encodeURIComponent(document.querySelector('input[name=Teacher]').value) + '&classId=MYP 4';">MYP 4</button>
+        <button onclick="window.location.href='unit.html?teacher=' + encodeURIComponent(document.querySelector('input[name=Teacher]').value) + '&classId=MYP 5';">MYP 5</button>
+        <!-- Add more classes as needed -->
+        
+        <input type="hidden" name="Teacher">
+    </body>
+    <footer>By RG Servers</footer>
+</html>
